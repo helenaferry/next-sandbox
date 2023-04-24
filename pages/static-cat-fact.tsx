@@ -1,4 +1,12 @@
 import PageTemplate from "./../components/page-template/page-template";
+import Image from "next/image";
+
+import { Kalam } from "next/font/google";
+
+const font = Kalam({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 type CatFactType = {
   imgUrl: string;
@@ -8,8 +16,15 @@ type CatFactType = {
 export default function StaticCatFact(props: CatFactType) {
   return (
     <PageTemplate heading="Static cat">
-      <img src={props.imgUrl} />
-      <p className="my-5">{props.fact}</p>
+      <Image
+        src={props.imgUrl}
+        alt={props.imgUrl}
+        fill={true}
+        className="!relative"
+      />
+      <p className="my-5 text-[30px]">
+        <span className={font.className}>{props.fact}</span>
+      </p>
     </PageTemplate>
   );
 }

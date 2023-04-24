@@ -1,4 +1,11 @@
 import PageTemplate from "./../components/page-template/page-template";
+import Image from "next/image";
+import { Alkatra } from "next/font/google";
+
+const font = Alkatra({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 type CatFactType = {
   imgUrl: string;
@@ -8,8 +15,15 @@ type CatFactType = {
 export default function RandomCatFact(props: CatFactType) {
   return (
     <PageTemplate heading="Random cat">
-      <img src={props.imgUrl} />
-      <p className="my-5">{props.fact}</p>
+      <Image
+        src={props.imgUrl}
+        alt={props.imgUrl}
+        fill={true}
+        className="!relative"
+      />
+      <p className="my-5 text-[30px]">
+        <span className={font.className}>{props.fact}</span>
+      </p>
     </PageTemplate>
   );
 }

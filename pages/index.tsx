@@ -2,7 +2,7 @@ import PageTemplate from "./../components/page-template/page-template";
 import Link from "next/link";
 export default function Home() {
   return (
-    <PageTemplate heading="The super important React Next app">
+    <PageTemplate heading="Next Sandbox / Cats Next">
       <p className="my-5">
         <span className="font-bold">Random cat fact:</span> fetches data on each
         request. Reload to see new data.

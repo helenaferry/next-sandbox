@@ -1,4 +1,5 @@
 import PageTemplate from "./../../components/page-template/page-template";
+import Image from "next/image";
 type GalleryType = {
   cats: Cat[];
 };
@@ -14,7 +15,7 @@ export default function Gallery(props: any) {
   return (
     <PageTemplate heading={`Static cat ${props.cat.id}`} urlPrefix="../">
       <div className="">
-        <img
+        <Image
           src={props.cat.url}
           alt={props.cat.id}
           width={props.cat.width}

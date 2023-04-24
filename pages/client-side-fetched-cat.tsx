@@ -1,5 +1,13 @@
 import PageTemplate from "./../components/page-template/page-template";
+import Image from "next/image";
 import { useState, useEffect } from "react";
+
+import { Courgette } from "next/font/google";
+
+const font = Courgette({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function ClientSideFetchedCat() {
   const [factData, setFactData] = useState(null);
@@ -21,8 +29,12 @@ export default function ClientSideFetchedCat() {
 
   return (
     <PageTemplate heading="Client side cat">
-      {imgData && <img src={imgData} />}
-      <p className="my-5">{factData}</p>
+      {imgData && (
+        <Image src={imgData} className="!relative" alt={imgData} fill={true} />
+      )}
+      <p className="my-5 text-[30px]">
+        <span className={font.className}>{factData}</span>
+      </p>
     </PageTemplate>
   );
 }

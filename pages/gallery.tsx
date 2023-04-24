@@ -1,5 +1,6 @@
 import PageTemplate from "./../components/page-template/page-template";
 import Link from "next/link";
+import Image from "next/image";
 type GalleryType = {
   cats: Cat[];
 };
@@ -15,7 +16,12 @@ export default function Gallery(props: GalleryType) {
       <div className="grid grid-cols-2 gap-3">
         {props.cats.map((cat) => (
           <Link href={`gallery/${cat.id}`} key={cat.id}>
-            <img src={cat.url} alt={cat.id} />
+            <Image
+              className="!relative"
+              src={cat.url}
+              alt={cat.id}
+              fill={true}
+            />
           </Link>
         ))}
       </div>
