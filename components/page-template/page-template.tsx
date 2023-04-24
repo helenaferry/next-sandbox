@@ -24,6 +24,13 @@ export default function PageTemplate(props: any) {
         |{" "}
         <Link
           className="hover:underline text-blue-600"
+          href={`${props.urlPrefix || ""}client-side-fetched-cat`}
+        >
+          Client side
+        </Link>{" "}
+        |{" "}
+        <Link
+          className="hover:underline text-blue-600"
           href={`${props.urlPrefix || ""}gallery`}
         >
           Static gallery
